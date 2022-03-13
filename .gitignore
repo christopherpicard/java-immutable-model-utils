@@ -7,11 +7,29 @@
 # BlueJ files
 *.ctxt
 
+#Intellij
+/.idea
+
+#Build Output
+build
+
+#Gradle
+/.gradle
+gradle
+gradlew
+gradlew.bat
+/configuration
+build.gradle
+settings.gradle
+
+#Build Pipeline
+Jenkinsfile
+jenkins*.properties
+
 # Mobile Tools for Java (J2ME)
 .mtj.tmp/
 
 # Package Files #
-*.jar
 *.war
 *.nar
 *.ear
