@@ -51,7 +51,7 @@ public final class IntGreaterThanEqualToValidator extends ValidatorAbs {
     public String validate() {
         String result = "";
         Integer value = valueSupplier.get();
-        if (value != null && value > minValue) {
+        if (value != null && value < minValue) {
             result = String.format(GREATER_THAN_EQUAL_TO_ERROR_MESSAGE_FORMAT, getName(), minValue);
         }
         return result;
