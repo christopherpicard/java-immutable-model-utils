@@ -42,6 +42,8 @@ public interface Validator {
 
     /**
      * Performs the validation check on the parameter the validator is for.
+     *
+     * @return Empty string if valid, error message if invalid.
      */
     String validate();
 }

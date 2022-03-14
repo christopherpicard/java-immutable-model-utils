@@ -26,8 +26,10 @@ import static org.junit.jupiter.api.Assertions.assertThrows;
 import static org.junit.jupiter.api.Assertions.assertTrue;
 
 public class BuilderAbsTest {
+    private static final String FAILING_PARAMETER_NAME = "test2";
     private static final MandatoryStringValidator PASSING_VALIDATOR = new MandatoryStringValidator("test1", BuilderAbsTest::getValue);
-    private static final MandatoryObjectValidator FAILING_VALIDATOR = new MandatoryObjectValidator("test2", BuilderAbsTest::getNullValue);
+    private static final MandatoryObjectValidator FAILING_VALIDATOR = new MandatoryObjectValidator(FAILING_PARAMETER_NAME,
+            BuilderAbsTest::getNullValue);
 
     private FakeBuilder instance;
 
@@ -71,7 +73,7 @@ public class BuilderAbsTest {
     public void getValidationErrors_NotValid() {
         instance.addValidator(FAILING_VALIDATOR);
         String result = instance.getValidationErrors();
-        assertEquals(String.format(Validator.UNSET_ERROR_MESSAGE_FORMAT, "test2"), result);
+        assertEquals(String.format(Validator.UNSET_ERROR_MESSAGE_FORMAT, FAILING_PARAMETER_NAME), result);
     }
 
     private static String getValue() {

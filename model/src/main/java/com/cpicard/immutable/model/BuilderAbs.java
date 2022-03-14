@@ -32,7 +32,7 @@ import org.apache.commons.lang3.StringUtils;
 @SuppressWarnings({"SameParameterValue", "unused"})
 public abstract class BuilderAbs<T> {
     /**
-     * The delimiter used to seperated different error messages when they are combined
+     * The delimiter used to seperated different error messages when they are combined.
      */
     public static final String ERROR_MESSAGE_DELIMITER = ", ";
     /**

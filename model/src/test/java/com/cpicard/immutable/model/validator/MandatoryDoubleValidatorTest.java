@@ -9,31 +9,31 @@ import static org.junit.jupiter.api.Assertions.assertThrows;
 import static org.junit.jupiter.api.Assertions.assertTrue;
 
 class MandatoryDoubleValidatorTest {
+    public static final String PARAMETER_NAME = "test";
 
     @Test
     public void testConstructor_NominalCase() {
-        assertDoesNotThrow(() -> new MandatoryDoubleValidator("test", MandatoryDoubleValidatorTest::getValidValue));
+        assertDoesNotThrow(() -> new MandatoryDoubleValidator(PARAMETER_NAME, MandatoryDoubleValidatorTest::getValidValue));
     }
 
     @Test
     public void testConstructor_NullSupplier() {
-        assertThrows(IllegalArgumentException.class, () -> new MandatoryDoubleValidator("test", null));
+        assertThrows(IllegalArgumentException.class, () -> new MandatoryDoubleValidator(PARAMETER_NAME, null));
     }
 
     @Test
     public void testValidate_Valid() {
-        MandatoryDoubleValidator instance = new MandatoryDoubleValidator("test", MandatoryDoubleValidatorTest::getValidValue);
+        MandatoryDoubleValidator instance = new MandatoryDoubleValidator(PARAMETER_NAME, MandatoryDoubleValidatorTest::getValidValue);
         String result = instance.validate();
         assertTrue(StringUtils.isEmpty(result), "Error message should be empty");
     }
 
     @Test
     public void testValidate_NotValid() {
-        MandatoryDoubleValidator instance = new MandatoryDoubleValidator("test", MandatoryDoubleValidatorTest::getInvalidValue);
+        MandatoryDoubleValidator instance = new MandatoryDoubleValidator(PARAMETER_NAME, MandatoryDoubleValidatorTest::getInvalidValue);
         String result = instance.validate();
-        assertEquals(String.format(Validator.UNSET_ERROR_MESSAGE_FORMAT, "test"), result);
+        assertEquals(String.format(Validator.UNSET_ERROR_MESSAGE_FORMAT, PARAMETER_NAME), result);
     }
-
 
     private static double getValidValue() {
         return 1.0;

@@ -13,28 +13,30 @@ import static org.junit.jupiter.api.Assertions.assertTrue;
 
 class MandatoryCollectionValidatorTest {
 
+    public static final String PARAMETER_NAME = "test";
+
     @Test
     public void testConstructor_NominalCase() {
-        assertDoesNotThrow(() -> new MandatoryCollectionValidator("test", MandatoryCollectionValidatorTest::getValidValue));
+        assertDoesNotThrow(() -> new MandatoryCollectionValidator(PARAMETER_NAME, MandatoryCollectionValidatorTest::getValidValue));
     }
 
     @Test
     public void testConstructor_NullSupplier() {
-        assertThrows(IllegalArgumentException.class, () -> new MandatoryCollectionValidator("test", null));
+        assertThrows(IllegalArgumentException.class, () -> new MandatoryCollectionValidator(PARAMETER_NAME, null));
     }
 
     @Test
     public void testValidate_Valid() {
-        MandatoryCollectionValidator instance = new MandatoryCollectionValidator("test", MandatoryCollectionValidatorTest::getValidValue);
+        MandatoryCollectionValidator instance = new MandatoryCollectionValidator(PARAMETER_NAME, MandatoryCollectionValidatorTest::getValidValue);
         String result = instance.validate();
         assertTrue(StringUtils.isEmpty(result), "Error message should be empty");
     }
 
     @Test
     public void testValidate_NotValid() {
-        MandatoryCollectionValidator instance = new MandatoryCollectionValidator("test", MandatoryCollectionValidatorTest::getInvalidValue);
+        MandatoryCollectionValidator instance = new MandatoryCollectionValidator(PARAMETER_NAME, MandatoryCollectionValidatorTest::getInvalidValue);
         String result = instance.validate();
-        assertEquals(String.format(Validator.UNSET_ERROR_MESSAGE_FORMAT, "test"), result);
+        assertEquals(String.format(Validator.UNSET_ERROR_MESSAGE_FORMAT, PARAMETER_NAME), result);
     }
 
     private static List<String> getValidValue() {
