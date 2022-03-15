@@ -22,6 +22,7 @@ import java.util.UUID;
  * @author Chris Picard
  * @version 0.0.1
  */
+@SuppressWarnings("unused")
 public interface ModelObject {
 
     /**

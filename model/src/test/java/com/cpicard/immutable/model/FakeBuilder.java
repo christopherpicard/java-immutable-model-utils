@@ -13,6 +13,7 @@
 
 package com.cpicard.immutable.model;
 
+@SuppressWarnings("unused")
 class FakeBuilder extends BuilderAbs<String> {
 
     @Override

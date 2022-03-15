@@ -21,6 +21,7 @@ import java.util.function.Supplier;
  * @author Chris Picard
  * @version 0.0.1
  */
+@SuppressWarnings("JavadocReference")
 public final class IntGreaterThanEqualToValidator extends ValidatorAbs {
     /**
      * The supplier of the value of the int parameter to validate that it is greater than or equal to the min value.

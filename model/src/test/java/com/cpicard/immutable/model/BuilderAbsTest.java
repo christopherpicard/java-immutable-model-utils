@@ -25,6 +25,7 @@ import static org.junit.jupiter.api.Assertions.assertFalse;
 import static org.junit.jupiter.api.Assertions.assertThrows;
 import static org.junit.jupiter.api.Assertions.assertTrue;
 
+@SuppressWarnings("SameReturnValue")
 public class BuilderAbsTest {
     private static final String FAILING_PARAMETER_NAME = "test2";
     private static final MandatoryStringValidator PASSING_VALIDATOR = new MandatoryStringValidator("test1", BuilderAbsTest::getValue);

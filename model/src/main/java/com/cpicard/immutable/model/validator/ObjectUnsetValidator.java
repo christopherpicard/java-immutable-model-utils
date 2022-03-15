@@ -9,6 +9,7 @@ import java.util.function.Supplier;
  * @author Chris Picard
  * @version 0.0.1
  */
+@SuppressWarnings("JavadocReference")
 public final class ObjectUnsetValidator extends ValidatorAbs {
     /**
      * The supplier of the value of the parameter to validate that it is unset.

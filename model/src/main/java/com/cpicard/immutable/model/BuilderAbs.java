@@ -38,7 +38,7 @@ public abstract class BuilderAbs<T> {
     /**
      * List of validators that will validate that the content of the builder is valid. They help to ensure that only valid objects are constructed.
      */
-    private List<Validator> validators;
+    private final List<Validator> validators;
 
     /**
      * Default Constructor.

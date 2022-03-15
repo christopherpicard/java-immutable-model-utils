@@ -22,6 +22,7 @@ import java.util.function.Supplier;
  * @author Chris Picard
  * @version 0.0.1
  */
+@SuppressWarnings("JavadocReference")
 public final class MandatoryDoubleValidator extends ValidatorAbs {
     /**
      * The supplier of the value of the double parameter to validate that it is set.

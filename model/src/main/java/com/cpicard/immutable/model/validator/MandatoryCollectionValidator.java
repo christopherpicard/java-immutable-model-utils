@@ -24,6 +24,7 @@ import org.apache.commons.collections4.CollectionUtils;
  * @author Chris Picard
  * @version 0.0.1
  */
+@SuppressWarnings("JavadocReference")
 public final class MandatoryCollectionValidator extends ValidatorAbs {
     /**
      * The supplier of the value of the collection parameter to validate that it is set.

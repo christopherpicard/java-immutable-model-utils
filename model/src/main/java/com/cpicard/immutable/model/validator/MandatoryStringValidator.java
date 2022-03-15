@@ -23,6 +23,7 @@ import org.apache.commons.lang3.StringUtils;
  * @author Chris Picard
  * @version 0.0.1
  */
+@SuppressWarnings("JavadocReference")
 public final class MandatoryStringValidator extends ValidatorAbs {
     /**
      * The supplier of the value of the string parameter to validate that it is set.

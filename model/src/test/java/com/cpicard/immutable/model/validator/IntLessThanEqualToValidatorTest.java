@@ -8,6 +8,7 @@ import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.junit.jupiter.api.Assertions.assertThrows;
 import static org.junit.jupiter.api.Assertions.assertTrue;
 
+@SuppressWarnings("SameReturnValue")
 class IntLessThanEqualToValidatorTest {
     public static final String PARAMETER_NAME = "test";
     public static final String SHOULD_BE_EMPTY_ERROR_MESSAGE = "Error message should be empty";
